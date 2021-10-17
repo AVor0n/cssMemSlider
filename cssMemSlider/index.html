@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <link href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+  <title>Cat Slider</title>
+</head>
+
+<body>
+  <div class="slider">
+    <input id="btn1" class="slider__switch" type="radio" name="switch" checked>
+    <input id="btn2" class="slider__switch" type="radio" name="switch">
+    <input id="btn3" class="slider__switch" type="radio" name="switch">
+    <input id="btn4" class="slider__switch" type="radio" name="switch">
+
+    <div class="slider__display slider__display--images">
+      <div class="slider__container slider__container--images">
+        <img class="slider__slide slider__slide--image" src="img/slide_1.jpg" alt="cat" />
+        <img class="slider__slide slider__slide--image" src="img/slide_2.jpg" alt="cat" />
+        <img class="slider__slide slider__slide--image" src="img/slide_3.jpg" alt="cat" />
+        <img class="slider__slide slider__slide--image" src="img/slide_4.jpg" alt="cat" />
+      </div>
+      <!-- /.slider__container--images -->
+    </div>
+    <!-- /.slider__display--images -->
+
+    <div class="slider__display slider__display--descriptions">
+      <div class="slider__container slider__container--descriptions">
+        <p class="slider__slide slider__slide--descrtiption">This is Cat #1</p>
+        <p class="slider__slide slider__slide--descrtiption">This is Cat #2</p>
+        <p class="slider__slide slider__slide--descrtiption">This is Cat #3</p>
+        <p class="slider__slide slider__slide--descrtiption">This is Cat #4</p>
+      </div>
+      <!-- /.slider__container--descriptions -->
+    </div>
+    <!-- /.slider__display--descriptions -->
+
+    <div class="slider__controls">
+      <label for="btn1" class="slider__btn"><span class="btn__inner"></span></label>
+      <label for="btn2" class="slider__btn"><span class="btn__inner"></span></label>
+      <label for="btn3" class="slider__btn"><span class="btn__inner"></span></label>
+      <label for="btn4" class="slider__btn"><span class="btn__inner"></span></label>
+    </div>
+    <!-- /.slider__controls -->
+  </div>
+
+</body>
+
+</html>

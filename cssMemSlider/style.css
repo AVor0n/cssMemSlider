@@ -1,0 +1,168 @@
+:root{
+  --count-slides: 4;
+
+  --color-back: #272B33;
+  --color-primary: #71ABFE;
+  --color-text: #ffffff;
+  --color-hover-btn: #FFFFFF;
+  --color-active-btn: #B6B6B6;
+
+  --size-btn-tap-area: 6vmin;
+  --size-btn: 3vmin;
+  --size-btn-border: 0.5vmin;
+  --size-border-radius: 1vmin;
+  --size-descr-padding: 5vmin;
+  --size-font: 3vmin;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background-color: var(--color-back);
+}
+
+.slider{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas:
+  'images images'
+  'descr btns';
+  max-width: 70vw;
+  margin: 5vh auto;
+  padding-bottom: 2vh;
+  gap: 2vh;
+}
+
+.slider__switch{
+  display: none;
+}
+
+.slider__display{
+  overflow: hidden;
+}
+.slider__display--images{
+  grid-area: images;
+}
+.slider__display--descriptions{
+  grid-area: descr;
+}
+
+.slider__container {
+  width: calc(100% * 4);
+  transition: all 0.5s;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+#btn1:checked~.slider__display .slider__container {
+  transform: translate(0);
+}
+
+#btn2:checked~.slider__display .slider__container {
+  transform: translate(calc(-100% / 4));
+}
+
+#btn3:checked~.slider__display .slider__container {
+  transform: translate(calc(-100% / 4 * 2));
+}
+
+#btn4:checked~.slider__display .slider__container {
+  transform: translate(calc(-100% / 4 * 3));
+}
+
+.slider__slide{
+  width: calc(100% / 4);
+  float: left;
+}
+
+.slider__slide--image{
+  border-radius: var(--size-border-radius);
+}
+
+.slider__slide--descrtiption{
+  font-family: 'ZCOOL KuaiLe', cursive;
+  font-size: var(--size-font);
+  color: var(--color-text);
+  padding-left: var(--size-descr-padding);
+}
+
+.slider__controls{
+  display: flex;
+  justify-content: flex-end;
+  margin-right: calc(var(--size-descr-padding) - ((var(--size-btn-tap-area) - var(--size-btn)) / 2));
+}
+
+.slider__btn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--size-btn-tap-area);
+  height: var(--size-btn-tap-area);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.slider__btn:hover .btn__inner{
+  background-color: var(--color-hover-btn);
+  border: var(--size-btn-border)  solid var(--color-hover-btn);
+}
+.slider__btn:active .btn__inner{
+  background-color: var(--color-active-btn);
+  border: var(--size-btn-border)  solid var(--color-active-btn);
+}
+.btn__inner{
+  display: block;
+  width: var(--size-btn);
+  height: var(--size-btn);
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  border: var(--size-btn-border) solid var(--color-primary);
+}
+
+#btn1:checked~.slider__controls label[for="btn1"] .btn__inner,
+#btn2:checked~.slider__controls label[for="btn2"] .btn__inner,
+#btn3:checked~.slider__controls label[for="btn3"] .btn__inner,
+#btn4:checked~.slider__controls label[for="btn4"] .btn__inner {
+  background-color: var(--color-back);
+}
+#btn1:checked~.slider__controls label[for="btn1"]:hover .btn__inner,
+#btn2:checked~.slider__controls label[for="btn2"]:hover .btn__inner,
+#btn3:checked~.slider__controls label[for="btn3"]:hover .btn__inner,
+#btn4:checked~.slider__controls label[for="btn4"]:hover .btn__inner {
+  background-color: var(--color-hover-btn);
+}
+#btn1:checked~.slider__controls label[for="btn1"]:active .btn__inner,
+#btn2:checked~.slider__controls label[for="btn2"]:active .btn__inner,
+#btn3:checked~.slider__controls label[for="btn3"]:active .btn__inner,
+#btn4:checked~.slider__controls label[for="btn4"]:active .btn__inner {
+  background-color: var(--color-active-btn);
+}
+
+@media (max-width: 600px) {
+  :root{
+    --size-btn-tap-area: 10vmin;
+    --size-btn: 6vmin;
+    --size-btn-border: 1vmin;
+    --size-border-radius: 2vmin;
+    --size-descr-padding: 1vmin;
+    --size-font: 7vmin;
+  }
+  .slider {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'images'
+      'btns'
+      'descr';
+    max-width: 90vw;
+    margin: 5vmin auto;
+    padding-bottom: 0;
+  }
+  .slider__controls{
+    justify-self: center;
+  }
+}

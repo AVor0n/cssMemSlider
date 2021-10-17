@@ -120,26 +120,26 @@ body{
   width: var(--size-btn);
   height: var(--size-btn);
   border-radius: 50%;
-  background-color: var(--color-back);
+  background-color: var(--color-primary);
   border: var(--size-btn-border) solid var(--color-primary);
 }
 
-#btn1:checked~.switch label[for="btn1"] .btn__inner,
-#btn2:checked~.switch label[for="btn2"] .btn__inner,
-#btn3:checked~.switch label[for="btn3"] .btn__inner,
-#btn4:checked~.switch label[for="btn4"] .btn__inner {
-  background-color: var(--color-primary);
+#btn1:checked~.slider__controls label[for="btn1"] .btn__inner,
+#btn2:checked~.slider__controls label[for="btn2"] .btn__inner,
+#btn3:checked~.slider__controls label[for="btn3"] .btn__inner,
+#btn4:checked~.slider__controls label[for="btn4"] .btn__inner {
+  background-color: var(--color-back);
 }
-#btn1:checked~.switch label[for="btn1"]:hover .btn__inner,
-#btn2:checked~.switch label[for="btn2"]:hover .btn__inner,
-#btn3:checked~.switch label[for="btn3"]:hover .btn__inner,
-#btn4:checked~.switch label[for="btn4"]:hover .btn__inner {
+#btn1:checked~.slider__controls label[for="btn1"]:hover .btn__inner,
+#btn2:checked~.slider__controls label[for="btn2"]:hover .btn__inner,
+#btn3:checked~.slider__controls label[for="btn3"]:hover .btn__inner,
+#btn4:checked~.slider__controls label[for="btn4"]:hover .btn__inner {
   background-color: var(--color-hover-btn);
 }
-#btn1:checked~.switch label[for="btn1"]:active .btn__inner,
-#btn2:checked~.switch label[for="btn2"]:active .btn__inner,
-#btn3:checked~.switch label[for="btn3"]:active .btn__inner,
-#btn4:checked~.switch label[for="btn4"]:active .btn__inner {
+#btn1:checked~.slider__controls label[for="btn1"]:active .btn__inner,
+#btn2:checked~.slider__controls label[for="btn2"]:active .btn__inner,
+#btn3:checked~.slider__controls label[for="btn3"]:active .btn__inner,
+#btn4:checked~.slider__controls label[for="btn4"]:active .btn__inner {
   background-color: var(--color-active-btn);
 }
 

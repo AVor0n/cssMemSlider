@@ -1,11 +1,26 @@
+:root{
+  --count-slides: 4;
+
+  --color-back: #272B33;
+  --color-primary: #71ABFE;
+  --color-text: #ffffff;
+  --color-hover-btn: #FFFFFF;
+  --color-active-btn: #B6B6B6;
+}
+
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+body{
+  background-color: var(--color-back);
+}
+
 .slider{
   display: grid;
+  grid-template-columns: repeat(2, 1fr);
   grid-template-areas:
   'images images'
   'descr btns';
@@ -32,6 +47,9 @@
 .slider__container {
   width: calc(100% * 4);
   transition: all 0.5s;
+  display: flex;
+  align-items: center;
+  height: 100%;
 }
 
 #btn1:checked~.slider__display .slider__container {
@@ -55,15 +73,65 @@
   float: left;
 }
 
+.slider__slide--image{
+  border-radius: 10px;
+}
+
+.slider__slide--descrtiption{
+  font-family: 'ZCOOL KuaiLe', cursive;
+  font-size: 25px;
+  color: var(--color-text);
+  padding-left: 20px;
+}
+
 .slider__controls{
   display: flex;
   justify-content: flex-end;
+  margin-right: 10px;
 }
 
 .slider__btn{
-  display: inline-block;
-  width: 15px;
-  height: 15px;
-  margin-left: 5px;
-  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.slider__btn:hover .btn__inner{
+  background-color: var(--color-hover-btn);
+  border: 3px solid var(--color-hover-btn);
+}
+.slider__btn:active .btn__inner{
+  background-color: var(--color-active-btn);
+  border: 3px solid var(--color-active-btn);
+}
+.btn__inner{
+  display: block;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: var(--color-back);
+  border: 3px solid var(--color-primary);
+}
+
+#btn1:checked~.switch label[for="btn1"] .btn__inner,
+#btn2:checked~.switch label[for="btn2"] .btn__inner,
+#btn3:checked~.switch label[for="btn3"] .btn__inner,
+#btn4:checked~.switch label[for="btn4"] .btn__inner {
+  background-color: var(--color-primary);
+}
+#btn1:checked~.switch label[for="btn1"]:hover .btn__inner,
+#btn2:checked~.switch label[for="btn2"]:hover .btn__inner,
+#btn3:checked~.switch label[for="btn3"]:hover .btn__inner,
+#btn4:checked~.switch label[for="btn4"]:hover .btn__inner {
+  background-color: var(--color-hover-btn);
+}
+#btn1:checked~.switch label[for="btn1"]:active .btn__inner,
+#btn2:checked~.switch label[for="btn2"]:active .btn__inner,
+#btn3:checked~.switch label[for="btn3"]:active .btn__inner,
+#btn4:checked~.switch label[for="btn4"]:active .btn__inner {
+  background-color: var(--color-active-btn);
 }

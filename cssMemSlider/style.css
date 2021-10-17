@@ -6,6 +6,13 @@
   --color-text: #ffffff;
   --color-hover-btn: #FFFFFF;
   --color-active-btn: #B6B6B6;
+
+  --size-btn-tap-area: 6vmin;
+  --size-btn: 3vmin;
+  --size-btn-border: 0.5vmin;
+  --size-border-radius: 1vmin;
+  --size-descr-padding: 5vmin;
+  --size-font: 3vmin;
 }
 
 *{
@@ -25,9 +32,9 @@ body{
   'images images'
   'descr btns';
   max-width: 70vw;
-  margin: 50px auto;
-  padding-bottom: 20px;
-  gap: 20px;
+  margin: 5vh auto;
+  padding-bottom: 2vh;
+  gap: 2vh;
 }
 
 .slider__switch{
@@ -74,47 +81,47 @@ body{
 }
 
 .slider__slide--image{
-  border-radius: 10px;
+  border-radius: var(--size-border-radius);
 }
 
 .slider__slide--descrtiption{
   font-family: 'ZCOOL KuaiLe', cursive;
-  font-size: 25px;
+  font-size: var(--size-font);
   color: var(--color-text);
-  padding-left: 20px;
+  padding-left: var(--size-descr-padding);
 }
 
 .slider__controls{
   display: flex;
   justify-content: flex-end;
-  margin-right: 10px;
+  margin-right: calc(var(--size-descr-padding) - ((var(--size-btn-tap-area) - var(--size-btn)) / 2));
 }
 
 .slider__btn{
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
+  width: var(--size-btn-tap-area);
+  height: var(--size-btn-tap-area);
   border-radius: 50%;
   cursor: pointer;
 }
 
 .slider__btn:hover .btn__inner{
   background-color: var(--color-hover-btn);
-  border: 3px solid var(--color-hover-btn);
+  border: var(--size-btn-border)  solid var(--color-hover-btn);
 }
 .slider__btn:active .btn__inner{
   background-color: var(--color-active-btn);
-  border: 3px solid var(--color-active-btn);
+  border: var(--size-btn-border)  solid var(--color-active-btn);
 }
 .btn__inner{
   display: block;
-  width: 16px;
-  height: 16px;
+  width: var(--size-btn);
+  height: var(--size-btn);
   border-radius: 50%;
   background-color: var(--color-back);
-  border: 3px solid var(--color-primary);
+  border: var(--size-btn-border) solid var(--color-primary);
 }
 
 #btn1:checked~.switch label[for="btn1"] .btn__inner,
@@ -134,4 +141,28 @@ body{
 #btn3:checked~.switch label[for="btn3"]:active .btn__inner,
 #btn4:checked~.switch label[for="btn4"]:active .btn__inner {
   background-color: var(--color-active-btn);
+}
+
+@media (max-width: 600px) {
+  :root{
+    --size-btn-tap-area: 10vmin;
+    --size-btn: 6vmin;
+    --size-btn-border: 1vmin;
+    --size-border-radius: 2vmin;
+    --size-descr-padding: 1vmin;
+    --size-font: 7vmin;
+  }
+  .slider {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'images'
+      'btns'
+      'descr';
+    max-width: 90vw;
+    margin: 5vmin auto;
+    padding-bottom: 0;
+  }
+  .slider__controls{
+    justify-self: center;
+  }
 }
